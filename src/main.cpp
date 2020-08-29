@@ -1,16 +1,12 @@
 #include <QtCore/QUrl>
-#include <QtCore/QCommandLineOption>
 #include <QtCore/QCommandLineParser>
 #include <QGuiApplication>
-#include <QStyleHints>
 #include <QScreen>
 #include <QQmlApplicationEngine>
 #include <QtQml/QQmlContext>
 #include <QWebEngineUrlScheme>
-#include <QWebEngineUrlSchemeHandler>
 #include <QWebEngineUrlRequestJob>
 #include <QWebEngineProfile>
-#include <QWebEngineUrlRequestInterceptor>
 #include <iostream>
 #include "main.h"
 
