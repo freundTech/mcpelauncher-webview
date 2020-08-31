@@ -4,7 +4,9 @@
 #include <QScreen>
 #include <QQmlApplicationEngine>
 #include <QtQml/QQmlContext>
+#if QT_VERSION >= 0x51200
 #include <QWebEngineUrlScheme>
+#endif
 #include <QWebEngineUrlRequestJob>
 #include <QWebEngineProfile>
 #include <iostream>
@@ -25,7 +27,9 @@ int main(int argc, char *argv[]) {
     auto endUrl = QUrl::fromUserInput(parser.positionalArguments()[1]);
 
     auto scheme = endUrl.scheme().toStdString();
+#if QT_VERSION >= 0x51200
     QWebEngineUrlScheme::registerScheme(QWebEngineUrlScheme(scheme.c_str()));
+#endif
     SchemeHandler handler(endUrl.toString());
     QWebEngineProfile::defaultProfile()->installUrlSchemeHandler(scheme.c_str(), &handler);
 
